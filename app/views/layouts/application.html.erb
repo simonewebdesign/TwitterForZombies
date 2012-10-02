@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitterForZombies</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<h1>
+	<!--<img src="<%= image_path "twitterforzombies-logo.png" %>" alt="Twitter... For Zombies!!!!!!!11">-->
+	<!--<%= image_tag "twitterforzombies-logo.png", :alt => "Twitter... For Zombies!!!!!!!11" %>-->
+	<%= link_to image_tag("twitterforzombies-logo.png", :alt => "Twitter... For Zombies!!!!!!!11"), root_path %>
+</h1>
+
+<% if flash[:notice] %>
+	<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= yield %>
+
+<footer>
+	Copyright &copy; TwitterForZombies. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<h1>Zombie profile</h1>
+
+<p>You are viewing the zombie named <%=@zombie.name%>.</p>
+<p>He is located in <%=@zombie.graveyard%>.</p>
+
+<%= link_to 'Edit', edit_zombie_path(@zombie) %> |
+<%= link_to 'Back', zombies_path %>
