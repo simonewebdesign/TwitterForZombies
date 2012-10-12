@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909165609) do
+ActiveRecord::Schema.define(:version => 20121012115918) do
+
+  create_table "brains", :force => true do |t|
+    t.integer  "zombie_id"
+    t.string   "status"
+    t.string   "flavor"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "brains", ["zombie_id"], :name => "index_brains_on_zombie_id"
 
   create_table "tweets", :force => true do |t|
     t.string   "status"
@@ -23,8 +33,12 @@ ActiveRecord::Schema.define(:version => 20120909165609) do
   create_table "zombies", :force => true do |t|
     t.string   "name"
     t.string   "graveyard"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.text     "bio"
+    t.integer  "age"
+    t.string   "email"
+    t.boolean  "rotting",    :default => false
   end
 
 end
