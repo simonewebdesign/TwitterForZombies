@@ -5,18 +5,19 @@
   <tr>
   	<th>ID</th>
     <th>Name</th>
+    <th>Age</th>
     <th>Graveyard</th>
     <th># tweets</th>
-    <th colspan=3>Actions</th>
+    <th colspan=2>Actions</th>
   </tr>
 
 <% @zombies.each do |zombie| %>
   <tr>
   	<td><%= zombie.id %></td>
-  	<td><%= zombie.name %></td>
+  	<td><%= link_to zombie.name, zombie %></td>
+  	<td><%= zombie.age %></td>
   	<td><%= zombie.graveyard %></td>
   	<td><%= zombie.tweets.count %></td>
-    <td><%= link_to 'Show', zombie %></td>
     <td><%= link_to 'Edit', edit_zombie_path(zombie) %></td>
     <td><%= link_to 'Destroy', zombie, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

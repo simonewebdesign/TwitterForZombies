@@ -1,7 +1,26 @@
-<h1>Zombie profile</h1>
-
-<p>You are viewing the zombie named <%=@zombie.name%>.</p>
-<p>He is located in <%=@zombie.graveyard%>.</p>
+<h1><%=@zombie.name%>'s profile</h1>
 
 <%= link_to 'Edit', edit_zombie_path(@zombie) %> |
 <%= link_to 'Back', zombies_path %>
+
+
+<h2>Personal information</h2>
+
+<p>Age: <strong><%=@zombie.age%></strong></p>
+<p>Current location: <strong><%=@zombie.graveyard%></strong></p>
+
+
+<h2>Recent Tweets</h2>
+
+<% @zombie.tweets.each do |tweet| %>
+<div id="tweet-<%=tweet.id%>"><strong><%=tweet.status%></strong> - twitted at <%=tweet.created_at%></div>
+<% end %>
+
+<% if @zombie.tweets.empty? %>
+<em>This zombie has not twitted yet.</em>
+<% end %>
+
+
+<h2>Weapons</h2>
+
+<!-- TODO this zombie has no weapons. -->

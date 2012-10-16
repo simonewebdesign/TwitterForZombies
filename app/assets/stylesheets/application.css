@@ -11,3 +11,26 @@
  *= require_self
  *= require_tree .
 */
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: Georgia, serif;
+	font-size: 62.5%; /* 1em = 10px */
+	
+	/*****  THE GOLDEN RULE  *****/
+	/* target / context = result */
+	/*  30px  /  10px   = 3em    */
+	
+	/* 30px is <h1> font size */
+	/* 10px is default browser font size */
+	
+	/* find more on journey_into_mobile_slides.pdf */
+}
+
+footer {
+	text-align: center;
+	font-size: .8em; /* 8px */
+}

@@ -1,7 +1,9 @@
 TwitterForZombies::Application.routes.draw do
-  resources :tweets
-  resources :zombies
-
+  
+  resources :zombies do
+    resources :tweets
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -51,8 +53,7 @@ TwitterForZombies::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'tweets#index'
-
+  root :to => 'tweets#latest'
 
   # See how all your routes lay out with "rake routes"
 

@@ -35,8 +35,15 @@ div {
   }
 }
 
-#notice {
+/* NOTICES */
+#success {
   color: green;
+}
+#alert {
+  color: yellow;
+}
+#error {
+  color: red;
 }
 
 .field_with_errors {

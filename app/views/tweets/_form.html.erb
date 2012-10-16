@@ -1,4 +1,4 @@
-<%= form_for(@tweet) do |f| %>
+<%= form_for [@zombie, @tweet] do |f| %>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
@@ -14,10 +14,10 @@
 	<%= debug @tweet %>
 
   <%= f.label :status %>:
-  <%= f.text_field :status %><br>
+  <%= f.text_area :status %><br>
 	
 	<%= f.label :zombie_id %>:
-	<%= f.text_field :zombie_id %> <small>(zombie_id here)</small><br>
+	<%= f.hidden_field :zombie_id %> <small>(zombie_id here)</small><br>
 	
   <div class="actions">
     <%= f.submit %>
