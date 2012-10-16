@@ -1,3 +1,5 @@
+A [simonewebdesign](http://simonewebdesign.com) creation, inspired by [RailsForZombies.org](http://railsforzombies.org/).
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
