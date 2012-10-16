@@ -1,4 +1,4 @@
-A [simonewebdesign](http://simonewebdesign.com) creation, inspired by [RailsForZombies.org](http://railsforzombies.org/).
+A simonewebdesign[http://simonewebdesign.it/] creation, inspired by RailsForZombies.org[http://railsforzombies.org/].
 
 == Welcome to Rails
 
