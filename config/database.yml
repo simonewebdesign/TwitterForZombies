@@ -6,6 +6,15 @@ development:
   username: postgres
   password: zombietwitter
 
+production:
+  adapter:  postgresql
+  encoding:   unicode
+  pool:   5
+  database:   d4r12i7h22q3bp
+  username:   xrajuuqnuenvnu
+  password:   pqx2oSDME9zLd84r3EcsKT_2F7
+  host:   ec2-54-243-232-2.compute-1.amazonaws.com
+  port:   5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,3 +30,4 @@ test: #&TEST
 
 #cucumber:
 #  <<: *TEST
+
