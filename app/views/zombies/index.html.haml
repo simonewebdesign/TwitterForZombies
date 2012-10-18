@@ -1,0 +1,27 @@
+%h2 OMG! Zombies!!!1
+
+= link_to 'New Zombie', new_zombie_path
+
+%table
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Age
+      %th Graveyard
+      %th # tweetss
+      %th{colspan: 2} Actions
+
+  %tbody
+    - @zombies.each do |zombie|
+      %tr
+        %td= zombie.id
+        %td= link_to zombie.name, zombie
+        %td= zombie.age
+        %td= zombie.graveyard
+        %td= zombie.tweets.count
+        %td= link_to 'Edit', edit_zombie_path(zombie)
+        %td= link_to 'Destroy', zombie, confirm: 'Do you really want to kill this zombie??!?', method: :delete
+
+- if @zombies.empty?
+  %em No zombies here.

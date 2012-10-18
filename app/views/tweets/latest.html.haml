@@ -1,0 +1,20 @@
+%h1 Latest tweets
+
+%table
+  %thead
+    %tr
+      %th Status
+      %th Zombie
+      %th Length
+      %th{colspan: 3} Actions
+  
+  %tbody
+  - @tweets.each do |tweet|
+    %tr
+      %td= tweet.status
+      %td= link_to tweet.zombie.name, zombie_path(tweet.zombie)
+      %td= tweet.status.length
+      %td= link_to 'Show', [tweet.zombie, tweet]
+
+- if @tweets.empty?
+  %em No tweets found.

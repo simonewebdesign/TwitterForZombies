@@ -1,0 +1,19 @@
+= form_for [@zombie, @tweet] do |f|
+  - if @tweet.errors.any?
+    #error_explanation
+      %h2= pluralize(@tweet.errors.count, "error") |
+      prohibited this tweet from being saved:
+      
+      %ul
+        - @tweet.errors.full_messages.each do |msg|
+        %li= msg
+
+  = f.label :status
+  = f.text_area :status
+  %br
+  = f.label :zombie_id
+  = f.hidden_field :zombie_id
+  %small (zombie_id here)
+  %br
+
+  .actions= f.submit

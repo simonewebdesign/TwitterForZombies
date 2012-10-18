@@ -1,0 +1,25 @@
+!!!
+%html
+	%head
+		%title TwitterForZombies
+		= stylesheet_link_tag    "application", media: "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+	
+		%h1= link_to image_tag("twitterforzombies-logo.png", alt: "Twitter... For Zombies!!!!!!!11"), root_path
+		
+		- if flash[:alert]
+			#alert= flash[:alert]
+		- if flash[:error]
+			#alert= flash[:error]
+		- if flash[:success]
+			#alert= flash[:success]			
+
+		= yield
+
+		%footer 
+			Copyright &copy; 2012 - #{Time.now.year} TwitterForZombies. All rights reserved.
+			%br
+			Developed by
+			= link_to "simonewebdesign", "http://simonewebdesign.com"

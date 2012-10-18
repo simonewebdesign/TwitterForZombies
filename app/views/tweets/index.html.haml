@@ -1,0 +1,23 @@
+%h1 
+  Listing tweets by #{ link_to @zombie.name, zombie_path(@zombie) }
+  
+= link_to New Tweet by #{@zombie.name}, new_zombie_tweet_path
+
+%table
+  %thead
+    %tra
+      %th Status
+      %th Length
+      %th{colspan: 3} Actions
+
+  %tbody
+    - @tweets.each do |tweet|
+      %tr
+        %td= tweet.status
+        %td= tweet.status.length
+        %td= link_to 'Show', [@zombie, tweet]
+        %td= link_to 'Edit', edit_zombie_tweet_path(@zombie, tweet)
+        %td= link_to 'Destroy', [@zombie, tweet], confirm: 'Are you sure?', method: :delete
+
+- if @tweets.empty?
+  %em No tweets found.

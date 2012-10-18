@@ -1,0 +1,30 @@
+%h1= @zombie.name + "'s profile"
+
+= link_to 'Edit', edit_zombie_path(@zombie)
+|
+= link_to 'Back', zombies_path
+
+%h2 Personal information
+
+%ul#zombie-personal-info
+  %li 
+    Age:
+    %strong= @zombie.age
+  %li
+    Current location:
+    %strong= @zombie.graveyard
+
+%h2 Recent Tweets
+
+%ul#zombie-tweets
+  - @zombie.tweets.each do |tweet|
+    %li
+      %strong= link_to tweet.status, zombie_tweet_path(@zombie, tweet)
+      \- twitted at
+      %time= tweet.created_at
+
+- if @zombie.tweets.empty?
+  %em This zombie has not twitted yet.
+
+%h2 Weapons
+-# TODO this zombie has no weapons.
